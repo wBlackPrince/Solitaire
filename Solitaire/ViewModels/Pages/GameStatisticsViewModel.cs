@@ -11,10 +11,10 @@ public partial class GameStatisticsViewModel: ViewModelBase
         public GameStatisticsViewModel(){}
     #endif
 
-    public GameStatisticsViewModel(CardGameViewModel cardGameViewModel)
+    public GameStatisticsViewModel(CardGameViewModel cardGameInstance)
     {
-        _cardGameInstance = _cardGameInstance;
-        GameName = cardGameViewModel.GameName;
+        _cardGameInstance = cardGameInstance;
+        GameName = cardGameInstance.GameName;
         _cardGameInstance.RegisterStatsInstance(this);
         ResetCommand = new RelayCommand(DoReset);
     }
@@ -90,6 +90,4 @@ public partial class GameStatisticsViewModel: ViewModelBase
     [ObservableProperty] private TimeSpan _cumulativeGameTime;
     [ObservableProperty] private TimeSpan _averageGameTime;
     private readonly CardGameViewModel? _cardGameInstance;
-    
-    
 }

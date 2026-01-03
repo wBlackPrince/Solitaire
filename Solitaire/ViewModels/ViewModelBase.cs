@@ -2,6 +2,7 @@
 
 namespace Solitaire.ViewModels;
 
-public class ViewModelBase : ObservableObject
+[ObservableObject]
+public abstract partial class ViewModelBase
 {
 }
